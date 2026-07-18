@@ -1,6 +1,8 @@
 The code here is for analyzing a used car dataset provided in the course 
 this assignment is for.
 
+Here is a link to the jupyter notebook: https://github.com/Valentina-Garcia/vg-assignments/blob/main/Assignment11_1/Practical_Application_2_Jupyter_Notebook.ipynb.
+
 We are tasked to develope and deploy a model for predicting used car 
 prices using the provided features. To do so, we will:
 
