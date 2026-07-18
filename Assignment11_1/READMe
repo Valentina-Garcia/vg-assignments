@@ -1,0 +1,35 @@
+The code here is for analyzing a used car dataset provided in the course 
+this assignment is for.
+
+We are tasked to develope and deploy a model for predicting used car 
+prices using the provided features. To do so, we will:
+
+Explore the data provided to us
+Prepare the data for modelling, including selecting and formatting the 
+data. This will also include segmenting the data into a train and test set
+Model the data using an appropriate frame work
+Evaluate the model using the test set
+Deploying the model to identify key drivers of used car prices.
+ 
+The code does some preliminary looking through the data and then generates 
+two different cleaned versions for analysis. These datasets are both split 
+into a training and test set for model buidling and evaluation.
+
+Several different models are then run to look for variables in the data 
+that influence the price of a used car, these models include linear 
+regression models and related models such as sequential feature selector 
+and LASSO. We evaluated the models by calculating the mean squared error 
+(MSE) and the mean absolute error (MAE) on both the training and test set. 
+
+Through the models we determained the following advice:
+That year is the most important 
+driver of price with newer cars generally costing more. However,
+a number of other factors influence price within age bands. Deseil cars 
+tend to cost more than non-deseil engines. Low 
+odometer millage correlates to higher prices and cars that are like new 
+are priced higher. Trucks and coups generally have higher prices while
+sudans and SUVs have lower prices. #Color is not the biggest determiner 
+of price, but black and yellow cars tend to re-sell for more, and green 
+cars tend to do very poorly.
+ 
+To run this code you will need python 3 and scikit-learn version 1.9.0.
