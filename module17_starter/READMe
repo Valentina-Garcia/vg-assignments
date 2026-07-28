@@ -1,0 +1,18 @@
+This python notebook:
+
+is for analyzing data related to the factors that identify a sales contact 
+is likely to subscribe to a long-term deposit to reduce the number of contacts 
+required. The data comes from this study:
+http://localhost:8888/files/CRISP-DM-BANK.pdf.
+
+In the jupyter notebook various different classification models are built 
+and their accuracy is tracked in a table for comparison. The data is 
+split into a train and test set. Many of the models performed similarly 
+wehn looking at the test set. A logistic regression model and a SVC classifier
+using default parameters performed very well. 
+
+The code requires pandas, numpy, matplot lib and seaborn along with python 3. 
+
+#In the future the buisness can use the logistic regression pipeline to predict if someone is likely to sign up
+#but if they don't have the pipeline for some reason, March is a very successful month for calls, the longer the call
+#duration the more successful it is to be, and the price is very important for predicting if they will sign on.
