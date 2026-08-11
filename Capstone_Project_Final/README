@@ -1,0 +1,31 @@
+Please note the data for this code is zipped. The code automatically unzips it, so leave it as is.
+
+This code is for Valentina Garcia's capstone project for the Professional 
+Certificate in Machine Learning and Artificial Intelligance program 
+offered by UC Berkeley. It is the first coding deliverable focused on 
+exploritory data analysis.
+
+In this project as a whole I will be examining analyzed proteomics data 
+that was published as part of this paper: doi: 10.1186/s13068-026-02750-w. 
+In this data there is the percent protein abundace of endogenous and 
+exogouns genes expressed in Rhodosporidium toruloides. Some of these 
+samples have been transformed through lithium acetate, agrobactium 
+mediated transformation, or both. Included with these samples is 
+non-transformed controls.
+
+For a final deliverable, I will first use this data to model a 
+classification problem to determine if I can predict which populations are 
+engineered and by what method. In this assignment, I will end by 
+generating an n-nearest neighbors model to act as a baseline for the final 
+deliverable work.
+
+In the final deliverable, I also aim to see if I can predict the total 
+expression level of introduced proteins using the expression of native 
+proteins. I will try scaling the data appropriately, using Grid Search to 
+find the right alpha, and Lasso to identify which native proteins are the 
+best features.
+
+To run this code you will need Python 3, Scikitlearn, matplot lib, and 
+Seaborn.
+
+Link to the jupyter notebook: https://github.com/Valentina-Garcia/vg-assignments/blob/main/Capstone_Project_EDA/2026_Capstone_EDA.ipynb
