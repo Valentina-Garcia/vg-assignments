@@ -1,31 +1,36 @@
 Please note the data for this code is zipped. The code automatically unzips it, so leave it as is.
 
 This code is for Valentina Garcia's capstone project for the Professional 
-Certificate in Machine Learning and Artificial Intelligance program 
-offered by UC Berkeley. It is the first coding deliverable focused on 
-exploritory data analysis.
-
-In this project as a whole I will be examining analyzed proteomics data 
-that was published as part of this paper: doi: 10.1186/s13068-026-02750-w. 
-In this data there is the percent protein abundace of endogenous and 
-exogouns genes expressed in Rhodosporidium toruloides. Some of these 
-samples have been transformed through lithium acetate, agrobactium 
-mediated transformation, or both. Included with these samples is 
-non-transformed controls.
-
-For a final deliverable, I will first use this data to model a 
-classification problem to determine if I can predict which populations are 
-engineered and by what method. In this assignment, I will end by 
-generating an n-nearest neighbors model to act as a baseline for the final 
-deliverable work.
-
-In the final deliverable, I also aim to see if I can predict the total 
-expression level of introduced proteins using the expression of native 
-proteins. I will try scaling the data appropriately, using Grid Search to 
-find the right alpha, and Lasso to identify which native proteins are the 
-best features.
+Certificate in Machine Learning and Artificial Intelligence program 
+offered by UC Berkeley. This is the final deliverable for the Capstone Project.
 
 To run this code you will need Python 3, Scikitlearn, matplot lib, and 
 Seaborn.
 
 Link to the jupyter notebook: https://github.com/Valentina-Garcia/vg-assignments/blob/main/Capstone_Project_EDA/2026_Capstone_EDA.ipynb
+
+
+Define the Problem Statement:
+If given a strain of unknown origin, it can be challenging to identify if it is engineered. Additionally, it can be challenging if it is engineered to predict how well the engineered pathway will be expressed.
+This capstone uses a relatively easy to acquire data type (Proteomics) to predict both engineering type and engineered pathway expression. The proteins that are most impactful in the modeling will provide insights into what could be changed about these organisms to better express desired pathways.
+
+Model outcomes or predictions:
+This submission uses both classification modeling to predict engineering type and regression modeling to predict protein expression levels.
+
+Data Acquisition:
+This code inputs analyzed proteomics data that was published as part of this paper: doi: 10.1186/s13068-026-02750-w. 
+In this data there is the percent protein abundance of endogenous and exogouns genes expressed in Rhodosporidium toruloides. Some of these samples have been transformed through lithium acetate, agrobactium mediated transformation, or both. Included with these samples is non-transformed controls.
+
+Data Preprocessing and Preparation:
+This code uses built in python and pandas commands to identify columns that are entirely Nan, to pull out important features like engineering type from the Sample Name column, and to restructure the data (using a pivot table) such that the individual proteins are the columns and the samples are the rows. It uses SciKitLearn's train-test-split command to split the data using default settings.
+
+Modeling:
+The code first addresses the classification problem through 4 classification pipelines--> a KNN model, a Random Forest model, a Decision Tree model, and a Radom forest model with an extensive parameter search. 
+The code next addresses the regression problem through 4 models, a linear regression model with all the features, a Lasso model, a refined lasso model, and an Elastic model. 
+
+Model evaluation:
+All of the classification models tested for identifying engineering type far outperformed the dummy classifier and are all ~90% accurate. The performance of each is relative to each other base on the accuracy scores is somewhat variable depending on how the data randomly gets split into the train and test sets. To really identify the best model for predicting engineering type, it would be great to test the models on a validation data set that was not used to build these models. It would also be good to test them on a set of proteomics data from completely unrelated strains that were generated through the same methods.
+
+For predicting the total exogenous protein expression, the Linear Regression model far outperforms the rest based on the mean squared error with fairly good accurate predictions on the outcome. This model would also benefit from validation using data from unrelated strains.
+
+It would be very interesting after further validation to look more into the proteins that are most important in the models. At a quick glance many of those proteins appear to be related to protein translation, which makes sense since we are generally increasing the protein translation need by engineering strains with high expressing pathways.
